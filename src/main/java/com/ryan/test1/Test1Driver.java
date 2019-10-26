@@ -32,8 +32,8 @@ public class Test1Driver {
         job.setOutputKeyClass(FilmBean.class);
         job.setOutputValueClass(NullWritable.class);
 
-        FileInputFormat.setInputPaths(job, new Path("D:\\Project\\test\\test1input"));
-        FileOutputFormat.setOutputPath(job, new Path("D:\\Project\\test\\test1output"));
+        FileInputFormat.setInputPaths(job, new Path(args[0]));
+        FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
         boolean b = job.waitForCompletion(true);
         System.exit(b ? 0 : 1);
